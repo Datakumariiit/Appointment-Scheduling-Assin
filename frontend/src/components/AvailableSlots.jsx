@@ -7,7 +7,7 @@ function AvailableSlots({ selectedDate }) {
   useEffect(() => {
     if (selectedDate) {
       axios
-        .get(`http://localhost:8000/available-slots?date_str=${selectedDate}`)
+        .get(`https://appointment-scheduling-assin.onrender.com/available-slots?date_str=${selectedDate}`)
         .then(res => setSlots(res.data.slots))
         .catch(err => console.error(err));
     }

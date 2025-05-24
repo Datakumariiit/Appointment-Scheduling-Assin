@@ -16,7 +16,7 @@ function BookingForm() {
     }
 
     try {
-      const res = await axios.get(`http://localhost:8000/available-slots?date_str=${form.date}`);
+      const res = await axios.get(`https://appointment-scheduling-assin.onrender.com/available-slots?date_str=${form.date}`);
       setAvailableSlots(res.data.slots);
     } catch (err) {
       alert("Failed to fetch slots");
@@ -29,7 +29,7 @@ function BookingForm() {
 
   const submit = async () => {
     try {
-      await axios.post('http://localhost:8000/book', form);
+      await axios.post('https://appointment-scheduling-assin.onrender.com/book', form);
       alert('Booked!');
     } catch (e) {
       alert(e.response?.data?.detail || 'Booking failed');

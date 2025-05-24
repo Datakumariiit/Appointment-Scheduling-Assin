@@ -6,7 +6,7 @@ function AvailabilityForm() {
 
   const submit = async () => {
     try {
-      await axios.post('http://localhost:8000/availability', form);
+      await axios.post('https://appointment-scheduling-assin.onrender.com/availability', form);
       alert('Availability set');
     } catch (e) {
       alert('Failed to set availability');
